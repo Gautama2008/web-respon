@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepakbola - Situs Responsive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header card">
+            <h1>Selamat Datang di Situs Sepakbola </h1>
+            <div style="margin-top:6px;font-size:13px;opacity:.95">
+                Berita, hasil pertandingan, profil pemain, dan banyak lagi
+            </div>
+        </div>
+
+        <div class="main">
+
+            <aside class="menu card">
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="#" onclick="loadContent('berita');return false;">Berita</a></li>
+                    <li><a href="#" onclick="loadContent('jadwal');return false;">Jadwal & Hasil</a></li>
+                    <li><a href="#" onclick="loadContent('tim');return false;">Tim</a></li>
+                    <li><a href="#" onclick="loadContent('pemain');return false;">Pemain</a></li>
+                    <li><a href="#" onclick="loadContent('galeri');return false;">Galeri</a></li>
+                </ul>
+            </aside>
+
+            <aside class="article card" id="main-article">
+                <div class="hero" id="hero">
+                    <div style="text-align:center">
+                        <h2 style="margin:0">Laga Seru Menanti!</h2>
+                        <div style="margin-top:6px;color:#00bbff">
+                            Klik menu di kiri untuk melihat konten sepakbola terkini.
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="article-title">Berita Utama</h2>
+                <p class="lead" id="article-sub">
+                    Sepakbola selalu menyajikan momen menegangkan dan penuh semangat!
+                </p>
+                <div id="article-content">
+                    <p>
+                        Selamat datang di situs sepakbola ! Di sini kamu bisa membaca
+                        berita terbaru, melihat jadwal pertandingan, dan mengenal pemain favoritmu.
+                    </p>
+                    <div style="text-align:center;margin:20px 0">
+                        <img src="madrid.jpg" width="500px" alt="Web Design Responsive"
+                            style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1)">
+                    </div>
+                    <p>
+                        Pertandingan pembuka liga berlangsung seru dengan skor 3–2.
+                        Simak jadwal lengkapnya di menu <strong>Jadwal & Hasil</strong>.
+                    </p>
+                    <p style="text-align:center"><a class="btn" href="#"
+                            onclick="loadContent('jadwal');return false;">Lihat Jadwal & Hasil >></a></p>
+                </div>
+            </aside>
+
+            <aside class="popular card">
+                <h3>Artikel Populer</h3>
+                <ul style="padding:0;margin:0;list-style:none">
+                    <li><a href="#" onclick="loadContent('pemain');return false;">6 Pemain Terbaik Musim Ini</a></li>
+                    <li><a href="#" onclick="loadContent('tim');return false;">Ranking Tim Teratas</a></li>
+                    <li><a href="#" onclick="loadContent('berita');return false;">Transfer Terpanas</a></li>
+                    <li><a href="#" onclick="loadContent('galeri');return false;">Gol Terbaik (Galeri)</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <div class="footer card">
+            © 2025 Situs Sepakbola — Dibuat untuk contoh tugas web responsive.
+        </div>
+    </div>
+
+    <script>
+        const contents = {
+            berita: {
+                title: 'Berita: Transfer & Kabar Tim',
+                sub: 'Update transfer pemain, rumor, dan analisis pertandingan.',
+                hero: '<div style="text-align:center"><strong style="font-size:18px">Transfer Musim Panas</strong><div style="margin-top:6px;color:#666">Klub-klub besar aktif di bursa</div></div>',
+                body: `
+          <p>Transfer musim panas kali ini berlangsung ramai, banyak klub besar aktif mendatangkan pemain baru untuk memperkuat tim mereka menjelang musim kompetisi baru.. Klub A mendatangkan striker baru
+          yang diharapkan menjadi mesin gol mereka.</p>
+          <ul>
+            <li>Striker baru mencetak 20 gol musim lalu</li>
+            <li>Gelandang kreatif pindah ke Klub B</li>
+          </ul>
+        `
+            },
+            jadwal: {
+                title: 'Jadwal & Hasil',
+                sub: 'Lihat jadwal pertandingan dan hasil terbaru.',
+                hero: '<div style="text-align:center"><strong style="font-size:18px">Jadwal Minggu Ini</strong><div style="margin-top:6px;color:#666">Update hasil langsung</div></div>',
+                body: `
+          <table style="width:100%;border-collapse:collapse">
+            <tr><th>Tanggal</th><th>Pertandingan</th><th>Hasil</th></tr>
+            <tr><td>6/4/2023</td><td>Madrid vs Barcelona</td><td>4 - 0</td></tr>
+            <tr><td>21/10/2024</td><td>Tottenham vs Manchester city</td><td>4 - 0</td></tr>
+          </table>
+        `
+            },
+            tim: {
+                title: 'Profil Tim',
+                sub: 'Informasi singkat tentang beberapa tim teratas.',
+                hero: '<div style="text-align:center"><strong style="font-size:18px">Tim Favorit</strong></div>',
+                body: `
+          <h4>Tim Madrid</h4>
+          <p>Didirikan: 1902 — Stadion: Stadion Kanjuruhan — Juara 1 kali.</p>
+          <h4>Tim Barca</h4>
+          <p>Didirikan: 1920 — Stadion: Stadion Tarkam— lamine yamal cedera kelamin.</p>
+        `
+            },
+            pemain: {
+                title: 'Profil Pemain',
+                sub: 'Daftar pemain bintang dan statistik singkat.',
+                hero: '<div style="text-align:center"><strong style="font-size:18px">Pemain Bintang</strong></div>',
+                body: `
+                <p>Berikut adalah beberapa pemain bintang yang mencuri perhatian musim ini:</p>
+            <p><strong>Messi</strong> - Posisi: Penyerang - Gol: 30</p>
+            <p><strong>Cristiano Ronaldo</strong> - Posisi: Penyerang - Gol: 35</p>
+            <p><strong>Neymar</strong> - Posisi: Gelandang - Gol: 29</p>
+            <p><strong>Kylian Mbappe</strong> - Posisi: Penyerang - Gol: 40</p>
+            <p><strong>Harry Kane</strong> - Posisi: Penyerang - Gol: 28</p>
+            <p><strong>De Bruyne</strong> - Posisi: Gelandang - Gol: 15</p>
+        `
+            },
+            galeri: {
+                title: 'Galeri Gol & Momen',
+                sub: 'Kumpulan foto dan video momen penting.',
+                hero: '<div style="text-align:center"><strong style="font-size:18px">Galeri</strong></div>',
+                body: `
+          <p>Beberapa momen terbaik musim ini:</p>
+         <img src="dodo.jpg" alt="Selebrasi Kemenangan" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);margin-bottom:10px"/>
+        <img src="messi.jpg" alt="Aksi di Lapangan" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);margin-bottom:10px"/>
+        `
+            }
+        };
+
+        function loadContent(key) {
+            const data = contents[key];
+            if (!data) return;
+            document.getElementById('article-title').innerText = data.title;
+            document.getElementById('article-sub').innerText = data.sub;
+            document.getElementById('article-content').innerHTML = data.body;
+            document.getElementById('hero').innerHTML = data.hero;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
